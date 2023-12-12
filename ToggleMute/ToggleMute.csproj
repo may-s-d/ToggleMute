@@ -24,5 +24,11 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>lib\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InputSystem.dll">
+      <HintPath>lib\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Runtime.dll">
+      <HintPath>lib\Unity.Netcode.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
