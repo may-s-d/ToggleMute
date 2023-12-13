@@ -3,21 +3,19 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine.InputSystem;
 
-namespace ToggleMute
-{
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class ToggleMute : BaseUnityPlugin
-    {
-        public static ConfigEntry<Key> configEntry;
-        private Harmony harmony;
+namespace ToggleMute {
+    [BepInPlugin("togglemute", "ToggleMute", "1.0.0")]
+    public class ToggleMute : BaseUnityPlugin {
+        public static ToggleMute Instance;
+        public static ConfigEntry<Key> ConfigEntry;
+        private Harmony Harmony;
 
-        private void Awake()
-        {
+        private void Awake() {
             Logger.LogInfo("Initializing ToggleMute");
             
             var id = "ToggleMute";
             var shortcut = Key.T;
-            var description = "Toggle mute";
+            var description = "Hotkey to toggle mute";
 
             var bind = Config.Bind(
                     "Bindings",
@@ -26,12 +24,12 @@ namespace ToggleMute
                     description
             );
 
-            configEntry = bind;
+            ConfigEntry = bind;
 
-            harmony = new Harmony(PluginInfo.PLUGIN_GUID);
-            harmony.PatchAll();
+            Harmony = new Harmony(PluginInfo.PLUGIN_GUID);
+            Harmony.PatchAll();
 
-            Logger.LogInfo($"Bound toggle mute to {shortcut}");
+            Logger.LogInfo($"Bound toggle mute to {bind.Value}");
             Logger.LogInfo("Initialized ToggleMute");
         }
     }
