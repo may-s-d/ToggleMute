@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 3338573997
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bca1008bd9af500a98fef85a7ddc0f01
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: bca1008bd9af500a98fef85a7ddc0f01
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SpeakingSymbol.png
+- Assets/SpeakingSymbolXed.png
+Dependencies: []
