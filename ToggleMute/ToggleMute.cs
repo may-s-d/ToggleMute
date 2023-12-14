@@ -1,20 +1,24 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
-using UnityEngine.InputSystem;
 using UnityEngine;
-using System.IO;
-using System.Reflection;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
+using UnityEngine.UI;
 
 namespace ToggleMute {
     [BepInPlugin("togglemute", "ToggleMute", "1.0.0")]
     public class ToggleMute : BaseUnityPlugin {
         public static ToggleMute Instance;
+        public GameObject SpeakingGameObject;
+        public GameObject MutedGameObject;
         public static ConfigEntry<Key> ConfigEntry;
         private Harmony Harmony;
 
         private void Awake() {
             Logger.LogInfo("Initializing ToggleMute");
+            Instance = this;
 
             // assets
             Assets.PopulateAssets();

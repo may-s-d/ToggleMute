@@ -1,6 +1,7 @@
 using HarmonyLib;
 using GameNetcodeStuff;
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 namespace ToggleMute.Patches;
 
@@ -15,6 +16,8 @@ internal class PlayerControllerBPatch {
         if (Keyboard.current[ToggleMute.ConfigEntry.Value].wasPressedThisFrame && !__instance.isTypingChat && !__instance.inTerminalMenu) {
             IngamePlayerSettings.Instance.SetOption(SettingsOptionType.MicEnabled, -1);
             IngamePlayerSettings.Instance.SaveChangedSettings();
+            ToggleMute.Instance.SpeakingGameObject.SetActive(IngamePlayerSettings.Instance.settings.micEnabled);
+            ToggleMute.Instance.MutedGameObject.SetActive(!IngamePlayerSettings.Instance.settings.micEnabled);
         }
     }
 }
