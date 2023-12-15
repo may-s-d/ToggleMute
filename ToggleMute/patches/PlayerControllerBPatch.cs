@@ -1,7 +1,6 @@
 using HarmonyLib;
 using GameNetcodeStuff;
 using UnityEngine.InputSystem;
-using UnityEngine;
 
 namespace ToggleMute.Patches;
 

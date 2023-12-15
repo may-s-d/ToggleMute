@@ -3,9 +3,6 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-using UnityEngine.U2D;
-using UnityEngine.UI;
 
 namespace ToggleMute {
     [BepInPlugin("togglemute", "ToggleMute", "1.0.0")]
