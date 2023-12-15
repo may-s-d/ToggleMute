@@ -9,9 +9,6 @@ internal class HUDManagerPatch {
     [HarmonyPatch("Awake")]
     [HarmonyPostfix]
     public static void HUDManagerPatch_Awake(HUDManager __instance) {
-        Transform transform = new GameObject("ToggleMuteUI").transform;
-        transform.SetParent(__instance.HUDContainer.transform.parent, false);
-
         ToggleMute.Instance.SpeakingGameObject = createGameObjectFromAssetName("SpeakingSymbol");
         ToggleMute.Instance.MutedGameObject = createGameObjectFromAssetName("SpeakingSymbolXed");
 
