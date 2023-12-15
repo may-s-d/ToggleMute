@@ -14,8 +14,7 @@ internal class PlayerControllerBPatch {
             return;
         }
         if (Keyboard.current[ToggleMute.ConfigEntry.Value].wasPressedThisFrame && !__instance.isTypingChat && !__instance.inTerminalMenu) {
-            IngamePlayerSettings.Instance.SetOption(SettingsOptionType.MicEnabled, -1);
-            IngamePlayerSettings.Instance.SaveChangedSettings();
+            IngamePlayerSettings.Instance.settings.micEnabled = !IngamePlayerSettings.Instance.settings.micEnabled;
             ToggleMute.Instance.SpeakingGameObject.SetActive(IngamePlayerSettings.Instance.settings.micEnabled);
             ToggleMute.Instance.MutedGameObject.SetActive(!IngamePlayerSettings.Instance.settings.micEnabled);
         }
