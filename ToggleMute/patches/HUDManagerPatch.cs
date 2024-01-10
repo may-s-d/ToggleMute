@@ -20,12 +20,11 @@ internal class HUDManagerPatch {
         var gameObject = new GameObject(assetName);
         RectTransform imageTransform = gameObject.AddComponent<RectTransform>();
 
-        imageTransform.parent = GameObject.Find("IngamePlayerHUD").transform;
+        imageTransform.parent = HUDManager.Instance.HUDContainer.transform;
         imageTransform.localScale = Vector2.one;
         imageTransform.anchoredPosition = Vector2.zero;
-        imageTransform.localPosition = new Vector2(-420f, -230f);
+        imageTransform.localPosition = new Vector2(-420f, -225f);
         imageTransform.sizeDelta = new Vector2(48f, 48f);
-
 
         var texture2D = Assets.MainAssetBundle.LoadAsset<Texture2D>(assetName);
         var sprite = Sprite.Create(texture2D, new Rect(0f, 0f, 256f, 256f), new Vector2(0f, 0f));
